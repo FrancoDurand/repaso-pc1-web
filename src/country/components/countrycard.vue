@@ -22,7 +22,7 @@ export default {
         return {
             country: new Country({
                 "country_name": "Afghanistan",
-                "iso-3166": "AF",
+                "iso_3166": "AF",
                 "total_holidays": 24,
                 "supported_languages": 2,
                 "uuid": "f0357a3f154bc2ffe2bff55055457068",
