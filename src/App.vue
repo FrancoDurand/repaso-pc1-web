@@ -1,4 +1,6 @@
 <script setup>
+import Countrycard from './country/components/countrycard.vue';
+
 </script>
 
 <template>
@@ -6,17 +8,9 @@
     <template #start>
       Supported Countries
     </template>
-
-    <template #center>
-      xd
-    </template>
-
-    <template #end>
-      aa
-    </template>
   </pv-toolbar>
 
-  <pv-card></pv-card>
+  <Countrycard></Countrycard>
 </template>
 
 <!-- 

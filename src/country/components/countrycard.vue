@@ -1,13 +1,32 @@
 <template>
-    <div class="country-card">
-        <!-- Your content here -->
-    </div>
+    <pv-card>
+        <template #title>
+            {{ country.country_name }}
+        </template>
+        <template #content>
+            COUNTRY content
+        </template>
+    </pv-card>
 </template>
 
 <script>
+import { Country } from '../model/country';
+
 export default {
-    name: 'CountryCard',
-    // Your component's properties, methods, etc. go here
+    name: 'country-card',
+    data() {
+        return {
+            country: new Country({
+                "country_name": "Afghanistan",
+                "iso-3166": "AF",
+                "total_holidays": 24,
+                "supported_languages": 2,
+                "uuid": "f0357a3f154bc2ffe2bff55055457068",
+                "flag_unicode": "🇦🇫"
+            })
+            //country: new Country("Afghanistan", "AF", 24, 2, "f0357a3f154bc2ffe2bff55055457068", "🇦🇫") sin llaves en el class
+        }
+    }
 }
 </script>
 
@@ -15,11 +34,10 @@ export default {
 /* Your component's styles go here */
 </style>
 
-<!-- {
-    "country_name": "Afghanistan",
-    "iso-3166": "AF",
-    "total_holidays": 24,
-    "supported_languages": 2,
-    "uuid": "f0357a3f154bc2ffe2bff55055457068",
-    "flag_unicode": "🇦🇫"
-    } -->
+<!-- 
+header,
+title,
+subtitle,
+content 
+footer
+-->

@@ -8,7 +8,7 @@
 */
 
 export class Country {
-    constructor(country_name, iso_3166, total_holidays, supported_languages, uuid, flag_unicode) {
+    constructor({ country_name, iso_3166, total_holidays, supported_languages, uuid, flag_unicode }) {
         this.country_name = country_name;
         this.iso_3166 = iso_3166;
         this.total_holidays = total_holidays;
