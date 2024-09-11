@@ -1,5 +1,5 @@
 <script setup>
-import Countrycard from './country/components/countrycard.vue';
+import Countrycard from './country/components/countrycard-item.vue';
 
 </script>
 

@@ -17,7 +17,7 @@
 import { Country } from '../model/country';
 
 export default {
-    name: 'country-card',
+    name: 'country-card-item',
     data() {
         return {
             country: new Country({
