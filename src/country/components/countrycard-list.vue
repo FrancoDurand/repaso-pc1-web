@@ -1,12 +1,14 @@
 <template>
-    <div>
-
+    <div v-for="country in countries">
+        <countrycard_item :country="country" />
     </div>
+
 </template>
 
 <script>
 import countrycard_item from './countrycard-item.vue'
 import { CountryApiService } from '../service/country-api';
+import { Country } from '../model/country';
 
 export default {
     name: 'countrycard-list',
@@ -14,13 +16,13 @@ export default {
     data() {
         return {
             countries: [],
-            contryApi: new CountryApiService()
+            countryApi: new CountryApiService()
         }
     },
     created() {
-        this.contryApi.getContries()
+        this.countryApi.getCountries()
             .then(response => {
-                this.countries = response.data.countries.map(country => new Source(country));
+                this.countries = response.data.response.countries.map(country => new Country(country));
             })
             .catch(e => alert("Error"));
     }

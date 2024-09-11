@@ -1,14 +1,14 @@
 <template>
     <pv-card>
         <template #title>
-            Name: {{ country.country_name }}
+            {{ $t('name') }}: {{ country.country_name }}
         </template>
         <template #content>
             <p>Iso:{{ country.iso_3166 }}</p>
-            <p>Total holidays: {{ country.total_holidays }}</p>
-            <p>Supported languages: {{ country.supported_languages }}</p>
+            <p>{{ $t('total') }}: {{ country.total_holidays }}</p>
+            <p>{{ $t('total2') }}: {{ country.supported_languages }}</p>
             <p>UUID: {{ country.uuid }}</p>
-            <p>Flag: {{ country.flag_unicode }}</p>
+            <p>{{ $t('flag') }}: {{ country.flag_unicode }}</p>
         </template>
     </pv-card>
 </template>
@@ -17,18 +17,11 @@
 import { Country } from '../model/country';
 
 export default {
-    name: 'country-card-item',
-    data() {
-        return {
-            country: new Country({
-                "country_name": "Afghanistan",
-                "iso_3166": "AF",
-                "total_holidays": 24,
-                "supported_languages": 2,
-                "uuid": "f0357a3f154bc2ffe2bff55055457068",
-                "flag_unicode": "🇦🇫"
-            })
-            //country: new Country("Afghanistan", "AF", 24, 2, "f0357a3f154bc2ffe2bff55055457068", "🇦🇫") sin llaves en el class
+    name: 'countrycard_item',
+    props: {
+        country: {
+            type: Country,
+            required: true
         }
     }
 }
