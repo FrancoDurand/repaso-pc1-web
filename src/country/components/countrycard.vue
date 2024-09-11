@@ -1,10 +1,14 @@
 <template>
     <pv-card>
         <template #title>
-            {{ country.country_name }}
+            Name: {{ country.country_name }}
         </template>
         <template #content>
-            COUNTRY content
+            <p>Iso:{{ country.iso_3166 }}</p>
+            <p>Total holidays: {{ country.total_holidays }}</p>
+            <p>Supported languages: {{ country.supported_languages }}</p>
+            <p>UUID: {{ country.uuid }}</p>
+            <p>Flag: {{ country.flag_unicode }}</p>
         </template>
     </pv-card>
 </template>
